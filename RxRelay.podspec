@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "RxRelay"
   s.version          = "6.0.0-beta.1"
-  s.summary          = "Relays for RxSwift - PublishRelay and BehaviorRelay"
+  s.summary          = "Relays for RxSwift - PublishRelay, ReplayRelay and BehaviorRelay"
   s.description      = <<-DESC
-Relays for RxSwift - PublishRelay and BehaviorRelay
+Relays for RxSwift - PublishRelay, ReplayRelay and BehaviorRelay
 
 * PublishRelay
+* ReplayRelay
 * BehaviorRelay
 * Binding overloads
                         DESC

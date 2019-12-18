@@ -42,6 +42,8 @@
 		54700CA01CE37E1800EF3A8F /* UINavigationItem+RxTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54700C9E1CE37D1000EF3A8F /* UINavigationItem+RxTests.swift.swift */; };
 		54700CA11CE37E1900EF3A8F /* UINavigationItem+RxTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54700C9E1CE37D1000EF3A8F /* UINavigationItem+RxTests.swift.swift */; };
 		54D2138E1CE0824E0028D5B4 /* UINavigationItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2138C1CE081890028D5B4 /* UINavigationItem+Rx.swift */; };
+		5C2FE69323AA540800CA6A7D /* ReplayRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2FE69223AA540800CA6A7D /* ReplayRelay.swift */; };
+		5C2FE69523AA564200CA6A7D /* ReplayRelay+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2FE69423AA564200CA6A7D /* ReplayRelay+Driver.swift */; };
 		601AE3DA1EE24E4F00617386 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601AE3D91EE24E4F00617386 /* SwiftSupport.swift */; };
 		6B9CA56B202A1F44002C2D11 /* KeyPathBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9CA568202A1F43002C2D11 /* KeyPathBinder.swift */; };
 		6B9CA56E202A206A002C2D11 /* KeyPathBinder+RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9CA56D202A1F96002C2D11 /* KeyPathBinder+RxTests.swift */; };
@@ -950,6 +952,8 @@
 		4C8DE0E120D54545003E2D8A /* DisposeBagTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBagTest.swift; sourceTree = "<group>"; };
 		54700C9E1CE37D1000EF3A8F /* UINavigationItem+RxTests.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+RxTests.swift.swift"; sourceTree = "<group>"; };
 		54D2138C1CE081890028D5B4 /* UINavigationItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Rx.swift"; sourceTree = "<group>"; };
+		5C2FE69223AA540800CA6A7D /* ReplayRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayRelay.swift; sourceTree = "<group>"; };
+		5C2FE69423AA564200CA6A7D /* ReplayRelay+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReplayRelay+Driver.swift"; sourceTree = "<group>"; };
 		601AE3D91EE24E4F00617386 /* SwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSupport.swift; sourceTree = "<group>"; };
 		6B9CA568202A1F43002C2D11 /* KeyPathBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathBinder.swift; sourceTree = "<group>"; };
 		6B9CA56D202A1F96002C2D11 /* KeyPathBinder+RxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyPathBinder+RxTests.swift"; sourceTree = "<group>"; };
@@ -1539,6 +1543,7 @@
 			children = (
 				C8B0F7101F530CA700548EBE /* PublishRelay.swift */,
 				C8C8BCCE1F8944B800501D4D /* BehaviorRelay.swift */,
+				5C2FE69223AA540800CA6A7D /* ReplayRelay.swift */,
 				A2897D61225CA3F3004EA481 /* Observable+Bind.swift */,
 				A2897D68225D023A004EA481 /* Utils.swift */,
 				A2FD4EA4225D0A8100288525 /* Info.plist */,
@@ -2264,6 +2269,7 @@
 			isa = PBXGroup;
 			children = (
 				C8C8BCD31F89459300501D4D /* BehaviorRelay+Driver.swift */,
+				5C2FE69423AA564200CA6A7D /* ReplayRelay+Driver.swift */,
 				C89AB1AE1DAAC3350065FBE6 /* ControlEvent+Driver.swift */,
 				C89AB1AF1DAAC3350065FBE6 /* ControlProperty+Driver.swift */,
 				C89AB1B01DAAC3350065FBE6 /* Driver+Subscription.swift */,
@@ -2933,6 +2939,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2897D57225CA236004EA481 /* PublishRelay.swift in Sources */,
+				5C2FE69323AA540800CA6A7D /* ReplayRelay.swift in Sources */,
 				A2897D58225CA236004EA481 /* BehaviorRelay.swift in Sources */,
 				A2897D62225CA3F3004EA481 /* Observable+Bind.swift in Sources */,
 				A2897D69225D023A004EA481 /* Utils.swift in Sources */,
@@ -2951,6 +2958,7 @@
 				C83E39802189066F001F4F0E /* NSControl+Rx.swift in Sources */,
 				C8093EE31B8A732E0088E94D /* DelegateProxyType.swift in Sources */,
 				C8093EFD1B8A732E0088E94D /* RxTarget.swift in Sources */,
+				5C2FE69523AA564200CA6A7D /* ReplayRelay+Driver.swift in Sources */,
 				C88254361B8A752B00B02D69 /* UITextView+Rx.swift in Sources */,
 				C88254171B8A752B00B02D69 /* RxTableViewReactiveArrayDataSource.swift in Sources */,
 				C8C8BCD41F89459300501D4D /* BehaviorRelay+Driver.swift in Sources */,

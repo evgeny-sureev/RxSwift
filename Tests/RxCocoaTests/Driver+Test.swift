@@ -178,6 +178,20 @@ extension DriverTest {
         XCTAssertEqual(results, [0, 1, 2])
     }
 
+    func testReplayRelayAsDriver() {
+        let hotObservable: ReplayRelay<Int> = ReplayRelay(bufferSize: 1)
+        let xs = Driver.zip(hotObservable.asDriver(), Driver.of(0, 0)) { x, _ in
+            return x
+        }
+
+        let results = subscribeTwiceOnBackgroundSchedulerAndOnlyOneSubscription(xs, expectationFulfilled: { $0 == 2 }) {
+            hotObservable.accept(1)
+            hotObservable.accept(2)
+        }
+
+        XCTAssertEqual(results, [1, 2])
+    }
+
     func testAsDriver_onErrorJustReturn() {
         let hotObservable = BackgroundThreadPrimitiveHotObservable<Int>()
         let xs = hotObservable.asDriver(onErrorJustReturn: -1)
@@ -419,5 +433,62 @@ extension DriverTest {
 
         XCTAssertEqual(relay.value, 1)
         subscription.dispose()
+    }
+}
+
+// MARK: drive replay relay
+
+extension DriverTest {
+    func testDriveReplayRelay() {
+        let relay = ReplayRelay<Int>(bufferSize: 1)
+
+        var latest: Int? = nil
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        _ = (Driver.just(1) as Driver<Int>).drive(relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+
+    func testDriveReplayRelay1() {
+        let relay = ReplayRelay<Int?>(bufferSize: 1)
+
+        var latest: Int? = nil
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        _ = (Driver.just(1) as Driver<Int>).drive(relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+
+    func testDriveReplayRelay2() {
+        let relay = ReplayRelay<Int?>(bufferSize: 1)
+
+        var latest: Int? = nil
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        _ = (Driver.just(1) as Driver<Int?>).drive(relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+
+    func testDriveReplayRelay3() {
+        let relay = ReplayRelay<Int?>(bufferSize: 1)
+
+        var latest: Int? = nil
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        // shouldn't cause compile time error
+        _ = Driver.just(1).drive(relay)
+
+        XCTAssertEqual(latest, 1)
     }
 }

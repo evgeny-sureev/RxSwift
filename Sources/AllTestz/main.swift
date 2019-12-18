@@ -232,6 +232,7 @@ final class DriverTest_ : DriverTest, RxTestCase {
     ("testDriverSharing_WhenErroring", DriverTest.testDriverSharing_WhenErroring),
     ("testDriverSharing_WhenCompleted", DriverTest.testDriverSharing_WhenCompleted),
     ("testBehaviorRelayAsDriver", DriverTest.testBehaviorRelayAsDriver),
+    ("testReplayRelayAsDriver", DriverTest.testReplayRelayAsDriver),
     ("testAsDriver_onErrorJustReturn", DriverTest.testAsDriver_onErrorJustReturn),
     ("testAsDriver_onErrorDriveWith", DriverTest.testAsDriver_onErrorDriveWith),
     ("testAsDriver_onErrorRecover", DriverTest.testAsDriver_onErrorRecover),
@@ -248,6 +249,10 @@ final class DriverTest_ : DriverTest, RxTestCase {
     ("testDriveBehaviorRelay1", DriverTest.testDriveBehaviorRelay1),
     ("testDriveBehaviorRelay2", DriverTest.testDriveBehaviorRelay2),
     ("testDriveBehaviorRelay3", DriverTest.testDriveBehaviorRelay3),
+    ("testDriveReplayRelay", DriverTest.testDriveReplayRelay),
+    ("testDriveReplayRelay1", DriverTest.testDriveReplayRelay1),
+    ("testDriveReplayRelay2", DriverTest.testDriveReplayRelay2),
+    ("testDriveReplayRelay3", DriverTest.testDriveReplayRelay3),
     ] }
 }
 
@@ -1164,6 +1169,11 @@ final class ObservableRelayBindTest_ : ObservableRelayBindTest, RxTestCase {
     ("testBindToOptionalBehaviorRelay", ObservableRelayBindTest.testBindToOptionalBehaviorRelay),
     ("testBindToOptionalBehaviorRelays", ObservableRelayBindTest.testBindToOptionalBehaviorRelays),
     ("testBindToBehaviorRelayNoAmbiguity", ObservableRelayBindTest.testBindToBehaviorRelayNoAmbiguity),
+    ("testBindToReplayRelay", ObservableRelayBindTest.testBindToReplayRelay),
+    ("testBindToReplayRelays", ObservableRelayBindTest.testBindToReplayRelays),
+    ("testBindToOptionalReplayRelay", ObservableRelayBindTest.testBindToOptionalReplayRelay),
+    ("testBindToOptionalReplayRelays", ObservableRelayBindTest.testBindToOptionalReplayRelays),
+    ("testBindToReplayRelayNoAmbiguity", ObservableRelayBindTest.testBindToReplayRelayNoAmbiguity),
     ] }
 }
 
@@ -1938,6 +1948,10 @@ final class SignalTests_ : SignalTests, RxTestCase {
     ("testSignalOptionalRelay1", SignalTests.testSignalOptionalRelay1),
     ("testSignalOptionalRelay2", SignalTests.testSignalOptionalRelay2),
     ("testDriveRelayNoAmbiguity", SignalTests.testDriveRelayNoAmbiguity),
+    ("testSignalReplayRelay", SignalTests.testSignalReplayRelay),
+    ("testSignalOptionalReplayRelay1", SignalTests.testSignalOptionalReplayRelay1),
+    ("testSignalOptionalReplayRelay2", SignalTests.testSignalOptionalReplayRelay2),
+    ("testDriveReplayRelayNoAmbiguity", SignalTests.testDriveReplayRelayNoAmbiguity),
     ] }
 }
 

@@ -79,6 +79,30 @@ extension SharedSequenceConvertibleType where SharingStrategy == SignalSharingSt
             relay.accept(e)
         })
     }
+    
+    /**
+     Creates new subscription and sends elements to relay.
+
+     - parameter relay: Target relay for sequence elements.
+     - returns: Disposable object that can be used to unsubscribe the observer from the relay.
+     */
+    public func emit(to relay: ReplayRelay<Element>) -> Disposable {
+        self.emit(onNext: { e in
+            relay.accept(e)
+        })
+    }
+
+    /**
+     Creates new subscription and sends elements to relay.
+
+     - parameter to: Target relay for sequence elements.
+     - returns: Disposable object that can be used to unsubscribe the observer from the relay.
+     */
+    public func emit(to relay: ReplayRelay<Element?>) -> Disposable {
+        self.emit(onNext: { e in
+            relay.accept(e)
+        })
+    }
 
     /**
      Subscribes an element handler, a completion handler and disposed handler to an observable sequence.

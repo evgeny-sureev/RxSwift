@@ -381,3 +381,60 @@ extension SignalTests {
         XCTAssertEqual(latest, 1)
     }
 }
+
+// MARK: Emit to replay relay
+
+extension SignalTests {
+    func testSignalReplayRelay() {
+        let relay = ReplayRelay<Int>(bufferSize: 1)
+
+        var latest: Int?
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        _ = (Signal.just(1) as Signal<Int>).emit(to: relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+
+    func testSignalOptionalReplayRelay1() {
+        let relay = ReplayRelay<Int?>(bufferSize: 1)
+
+        var latest: Int? = nil
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        _ = (Signal.just(1) as Signal<Int>).emit(to: relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+
+    func testSignalOptionalReplayRelay2() {
+        let relay = ReplayRelay<Int?>(bufferSize: 1)
+
+        var latest: Int?
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        _ = (Signal.just(1) as Signal<Int?>).emit(to: relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+
+    func testDriveReplayRelayNoAmbiguity() {
+        let relay = ReplayRelay<Int?>(bufferSize: 1)
+
+        var latest: Int? = nil
+        _ = relay.subscribe(onNext: { latestElement in
+            latest = latestElement
+        })
+
+        // shouldn't cause compile time error
+        _ = Signal.just(1).emit(to: relay)
+
+        XCTAssertEqual(latest, 1)
+    }
+}
